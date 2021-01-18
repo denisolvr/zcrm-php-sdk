@@ -49,7 +49,7 @@ class ZohoOAuthTokens
     
     public function isValidAccessToken()
     {
-        return ($this->getExpiryTime() - $this->getCurrentTimeInMillis()) > 1000;
+        return ($this->getExpiryTime() - $this->getCurrentTimeInMillis()) > 600000;
     }
     
     public function getCurrentTimeInMillis()
