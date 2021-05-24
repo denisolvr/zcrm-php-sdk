@@ -52,6 +52,8 @@ class ZohoHTTPConnector
         curl_setopt($curl_pointer, CURLOPT_USERAGENT, $this->userAgent);
         curl_setopt($curl_pointer, CURLOPT_HTTPHEADER, self::getRequestHeadersAsArray());
         curl_setopt($curl_pointer, CURLOPT_CUSTOMREQUEST, APIConstants::REQUEST_METHOD_GET);
+        curl_setopt($curl_pointer, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($curl_pointer, CURLOPT_SSL_VERIFYPEER, 0);
         
         if ($this->requestType === APIConstants::REQUEST_METHOD_POST) {
             curl_setopt($curl_pointer, CURLOPT_CUSTOMREQUEST, APIConstants::REQUEST_METHOD_POST);
